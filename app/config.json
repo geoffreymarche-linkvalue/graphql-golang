@@ -1,0 +1,9 @@
+{
+  "mysql": {
+    "user": "root",
+    "password": "root",
+    "address": "db",
+    "port": 3306,
+    "database": "graphql"
+  }
+}
