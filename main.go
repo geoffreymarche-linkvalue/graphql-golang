@@ -1,7 +1,7 @@
 package main
 
 import (
-	"graphql-golang/app"
+	"graphql-golang/internal"
 	"graphql-golang/mutations"
 	"graphql-golang/queries"
 	"log"
@@ -13,8 +13,8 @@ import (
 
 func main() {
 
-	config := app.Load()
-	dbService := app.NewDBService(config)
+	config := internal.Load()
+	dbService := internal.NewDBService(config)
 	if dbService != nil {
 
 	}
@@ -42,7 +42,7 @@ func main() {
 	http.Handle("/", httpHandler)
 	log.Print("ready: listening...\n")
 
-	err = http.ListenAndServe(":8383", nil)
+	err = http.ListenAndServe(":4000", nil)
 	if err != nil {
 		panic(err)
 	}

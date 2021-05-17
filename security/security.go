@@ -24,7 +24,7 @@ func Handle(next http.Handler) http.Handler {
 		})
 
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-			log.Printf("JWT Authenticated OK (app: %s)", claims["app"])
+			log.Printf("JWT Authenticated OK (internal: %s)", claims["internal"])
 
 			next.ServeHTTP(w, r)
 		}

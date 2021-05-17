@@ -1,6 +1,14 @@
 version: '3.4'
 
 services:
+  api:
+    container_name: dockerdev
+    build: ./
+    depends_on:
+      - db
+    ports:
+      - 4000:4000
+
   db:
     image: mysql:5.7
     restart: always
